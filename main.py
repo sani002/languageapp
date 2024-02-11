@@ -46,7 +46,7 @@ with st.sidebar:
         )
     st.session_state['chat_title'] = f'ChatSession-{st.session_state["chat_id"]}'
 
-st.write('# Chat with Gemini')
+st.write('# Chat with mBot')
 
 # Initialize or load chat history
 try:
@@ -75,8 +75,8 @@ if uploaded_file is not None:
 
     # User message display
     with st.chat_message('user'):
-        st.markdown(prompt)
-    st.session_state['messages'].append({'role': 'user', 'content': prompt})
+        st.markdown(text)
+    st.session_state['messages'].append({'role': 'user', 'content': text})
 
     # Send message to AI and display response
     response = st.session_state['chat'].send_message(prompt, stream=True)
